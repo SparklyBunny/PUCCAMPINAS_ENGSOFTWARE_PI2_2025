@@ -1,0 +1,237 @@
+/* AUTORA: Rafaela Jacobsen */
+
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ======== BASE ======== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f8ff !important;
+  color: #1e3c72;
+}
+
+/* ======== NAVBAR ======== */
+.navbar {
+  /* Aplica o gradiente de azul na barra de navegação */
+  background: linear-gradient(135deg, #1e88e5, #1565c0) !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar-brand i {
+  margin-right: 6px;
+}
+
+/* Inverte as cores do ícone de sanduíche para que fique branco no fundo azul */
+.navbar-toggler {
+  border: none;
+  filter: brightness(0) invert(1);
+}
+
+/* Estilo do menu lateral (Offcanvas) */
+.offcanvas {
+  background-color: #f5f8ff;
+  border-left: 2px solid #1565c0;
+}
+
+.offcanvas-title {
+  color: #1e3c72;
+}
+
+.nav-link {
+  color: #1e3c72 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1565c0 !important;
+}
+
+/* Estilo para o link ativo (página atual) */
+.nav-link.active {
+  color: #1565c0 !important;
+  font-weight: 600;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+.container-fluid.bg-white {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 25px rgba(30, 60, 114, 0.15);
+  max-width: 1100px;
+  margin-top: 80px;
+}
+
+/* Título */
+h1.display-6 {
+  color: #1e3c72;
+}
+
+/* Texto secundário */
+.text-muted {
+  color: #607d8b !important;
+}
+
+/* ======== ALERTAS ======== */
+.alert {
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* ======== BOTÃO NOVA TURMA ======== */
+.btn-primary {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  border: none;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 12px;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(21, 101, 192, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(21, 101, 192, 0.55);
+}
+
+/* ======== MODAL ======== */
+.modal-content {
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(30, 60, 114, 0.25);
+}
+
+.modal-header {
+  border-bottom: 1px solid #e3f2fd;
+}
+
+.modal-title {
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+.modal-body p {
+  color: #607d8b;
+}
+
+/* Inputs com ícones */
+.input-group-text {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #bbdefb;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1px solid #bbdefb;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 6px rgba(21, 101, 192, 0.4);
+}
+
+/* ======== LISTAGEM DE INSTITUIÇÕES ======== */
+.instituicao-container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(30, 60, 114, 0.12);
+}
+
+.nome-instituicao {
+  color: #1e3c72;
+  font-weight: 700;
+}
+
+/* ======== CARDS DE CURSOS ======== */
+.curso-container {
+  border-radius: 14px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  border-left: 4px solid #1565c0;
+}
+
+.curso-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(21, 101, 192, 0.25);
+}
+
+.nome-curso {
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+/* ======== CARD DE TURMAS ======== */
+.turmas-card {
+  border: 1px solid #e3f2fd;
+  background: #f8fbff;
+  border-radius: 12px;
+}
+
+.turmas-card h6 {
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* ======== LISTA DE TURMAS ======== */
+.lista-turmas .list-group-item {
+  background: #ffffff;
+  border: 1px solid #e3f2fd;
+  border-radius: 10px !important;
+  margin-bottom: 6px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+}
+
+.turma-nome {
+  color: #1e3c72;
+  font-weight: 500;
+}
+
+/* Botões Editar/Excluir */
+.btn-outline-secondary {
+  border-radius: 8px;
+}
+
+.btn-outline-danger {
+  border-radius: 8px;
+}
+
+/* ======== FOOTER ======== */
+#footer {
+  background-color: #e3f2fd;
+  color: #1e3c72;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  border-top: 1px solid #bbdefb; /* Linha sutil de separação */
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .container-fluid.bg-white {
+    padding: 25px;
+  }
+
+  h1.display-6 {
+    font-size: 1.6rem;
+  }
+
+  .curso-container {
+    border-left-width: 3px;
+  }
+
+  .lista-turmas .list-group-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

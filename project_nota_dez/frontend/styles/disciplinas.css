@@ -1,0 +1,196 @@
+/* AUTORA: Rafaela Jacobsen */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ======== BASE ======== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f8ff; /* Cor de fundo da página: muito claro/quase branco (bg-body-tertiary no HTML é substituído) */
+  color: #1e3c72; /* Cor de texto principal (azul escuro) */
+}
+
+/* Os estilos h1, p.lead, etc., aplicados à seção principal no container-fluid.bg-white são mantidos */
+/* Note: O seu container principal no HTML tem as classes container-fluid bg-white shadow rounded p-5, 
+mas o seu CSS foca em: .container-fluid.bg-white no bloco de apresentação */
+.container-fluid.bg-white {
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(30, 60, 114, 0.15);
+  max-width: 1000px;
+  width: 90%;
+  /* O estilo background-color: #fff é herdado da classe 'bg-white' do Bootstrap, 
+  mas é bom garantir que o corpo do contêiner principal siga o estilo definido */
+}
+
+h1, .offcanvas-title, .card-title {
+  color: #1e3c72; /* Aplica o azul escuro NotaDez aos títulos */
+}
+
+p.lead, .card-text {
+  color: #607d8b; /* Cor de texto secundária/cinza-azulado */
+}
+
+/* Ajustes visuais para o bloco de alerta e tabela para melhor integração */
+.alert-light {
+    border: 1px solid #bbdefb !important; /* Borda mais suave para o alerta de dica */
+}
+.tabela-disciplinas thead.table-primary {
+    background-color: #1e88e5; /* Azul mais forte para o cabeçalho da tabela */
+    color: #fff;
+    border-color: #1e88e5;
+}
+.tabela-disciplinas thead th {
+    border-color: #1e88e5;
+}
+
+
+/* ======== NAVBAR ======== */
+/* O HTML usa 'navbar bg-body-tertiary fixed-top shadow-sm', que será sobrescrito pelo !important */
+.navbar {
+  background: linear-gradient(135deg, #1e88e5, #1565c0) !important; /* Gradiente azul para a barra de navegação */
+}
+
+.navbar-brand {
+  color: #fff !important; /* Texto da marca em branco */
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar-brand i {
+  margin-right: 6px;
+}
+
+.navbar-toggler {
+  border: none;
+  filter: brightness(0) invert(1); /* Deixa o ícone do toggler branco */
+}
+
+/* ======== MENU LATERAL (OFFCANVAS) ======== */
+.offcanvas {
+  background-color: #f5f8ff; /* Cor de fundo clara para o menu lateral */
+  border-left: 2px solid #1565c0; /* Borda lateral azul */
+}
+
+.offcanvas-title {
+  color: #1e3c72;
+}
+
+.nav-link {
+  color: #1e3c72 !important; /* Links de navegação em azul escuro */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1565c0 !important; /* Azul escuro no hover */
+}
+
+.nav-link.active {
+  color: #1565c0 !important; /* Azul escuro para o link ativo */
+  font-weight: 600;
+}
+
+/* ======== BLOCO DE APRESENTAÇÃO (Ajuste para o container principal que contém a lógica da página) ======== */
+/* O container que engloba tudo tem a classe container-fluid bg-white shadow rounded p-5, ele será estilizado */
+.container-fluid.bg-white {
+  /* Os estilos originais do bloco de apresentação são reaplicados ao container principal */
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(30, 60, 114, 0.15);
+  max-width: 1000px;
+  width: 90%;
+  margin-top: 80px;
+}
+
+
+/* ======== CARDS (Usado na lista de cursos dentro da listadisciplina) ======== */
+/* Note: O HTML usa o padrão de colunas/divs para cursos e tabelas, mas o CSS original define um card. 
+O estilo é aplicado ao 'curso-container' (que atua como um card no HTML) */
+.curso-container {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(30, 60, 114, 0.1);
+  transition: all 0.3s ease;
+}
+
+.curso-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(30, 60, 114, 0.25);
+}
+
+.curso-container .nome-curso {
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+.curso-container p { /* Não há .card-text no HTML, mas esta regra se aplicaria a <p> dentro do container */
+  color: #607d8b;
+}
+
+/* ======== BOTÃO PRIMÁRIO (Usado no botão "Nova Disciplina" e "Salvar Disciplina") ======== */
+.btn-primary {
+  background: linear-gradient(135deg, #1e88e5, #1565c0); /* Gradiente azul */
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(21, 101, 192, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(21, 101, 192, 0.55);
+}
+
+/* O Bootstrap 5 usa cores diferentes para o :focus, então é bom sobrescrever */
+.btn-primary:focus, .btn-primary:active {
+  box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.5); /* Sombra do foco mais azulada */
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+}
+
+/* Ajustes para os botões de ação na tabela */
+.btn-outline-secondary, .btn-outline-danger {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-outline-secondary {
+    color: #1e3c72;
+    border-color: #bbdefb;
+}
+.btn-outline-secondary:hover {
+    background-color: #bbdefb;
+    color: #1e3c72;
+    border-color: #90caf9;
+}
+
+
+/* ======== RODAPÉ ======== */
+/* O HTML usa 'bg-light border-top', o CSS vai sobrescrever ou complementar */
+#footer {
+  background-color: #e3f2fd; /* Azul muito claro */
+  color: #1e3c72;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  border-top: 1px solid #bbdefb; /* Borda superior clara */
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  /* Como o HTML usa o 'curso-container' dentro de um sistema de grid,
+  este estilo 'card' deve se aplicar a ele ou a um elemento envolvente.
+  Aplicando ao col que contém o curso-container: */
+  .col-12.col-md-6 {
+    margin-bottom: 20px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  /* Aplica ao título principal da página */
+  h1.display-6 { /* Corrigido de h1.display-5 para h1.display-6 (classe no HTML) */
+    font-size: 1.8rem !important;
+  }
+}

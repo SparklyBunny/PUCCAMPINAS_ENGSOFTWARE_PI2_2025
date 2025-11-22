@@ -1,0 +1,175 @@
+<!-- Autora: Laura Lugli -->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instituição | NotaDez</title>
+
+        <link href="/styles/base.css" rel="stylesheet"/>
+        <link href="/styles/instituicoes.css" rel="stylesheet"/>
+
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+
+    <body class="d-flex flex-column min-vh-100 bg-body-tertiary">
+        <!-- NAVBAR -->
+        <nav class="navbar bg-body-tertiary fixed-top shadow-sm">
+            <div class="container-fluid px-lg-5">
+                <a class="navbar-brand fw-semibold" href="#"><i class="bi bi-mortarboard-fill"></i> NotaDez</a>
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="offcanvas" 
+                    data-bs-target="#offcanvasNavbar" 
+                    aria-controls="offcanvasNavbar" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title fw-semibold" id="offcanvasNavbarLabel">Menu NotaDez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item"><a class="nav-link" href="../pages/home.html"><i class="bi bi-house"></i> Home</a></li>
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="../pages/instituicoes.html">Instituição</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/cursos.html">Cursos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/disciplinas.html">Disciplinas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/turmas.html">Turmas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/notas.html">Notas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN -->
+        <main class="flex-grow-1 mt-5 mb-5 d-flex align-items-start justify-content-center">
+            <div class="container-fluid bg-white shadow rounded p-5">
+                <h1 class="fw-bold mb-3 display-6"><i class="bi bi-building"></i> Instituição</h1>
+                <p class="text-muted mb-4">Gerencie aqui as instituições vinculadas às suas disciplinas e cursos.</p>
+
+                <!-- ALERTAS -->
+                <div class="alert alert-warning d-flex align-items-center d-none" id="alertDuplicada" role="alert">
+                    <div><i class="bi bi-exclamation-triangle"></i><strong> Instituição já cadastrada!</strong></div>
+                </div>
+                <div class="alert alert-warning d-flex align-items-center d-none" id="alertCampos" role="alert">
+                    <div><i class="bi bi-exclamation-triangle"></i><strong> Campos obrigatórios não preenchidos!</strong></div>
+                </div>
+                <div class="alert alert-success d-flex align-items-center d-none" id="alertSucesso" role="alert">
+                    <div><i class="bi bi-check-circle"></i><strong> Instituição cadastrada com sucesso!</strong></div>
+                </div>
+
+                <!-- BOTÃO NOVA INSTITUIÇÃO -->
+                <div class="d-grid gap-2 col-sm-6 col-md-4 mx-auto mb-5">
+                    <button type="button" class="btn btn-primary fw-semibold" data-bs-toggle="modal" data-bs-target="#modalNovaInstitucao">
+                        <i class="bi bi-plus-circle"></i> Nova Instituição
+                    </button>
+                </div>
+
+                <!-- MODAL NOVA INSTITUIÇÃO -->
+                <div class="modal fade" id="modalNovaInstitucao" tabindex="-1" aria-labelledby="modalNovaInstitucaoLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content shadow">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalNovaInstitucaoLabel">Nova Instituição</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-start">Preencha o campo abaixo para adicionar uma nova instituição.</p>
+                                <form id="formNovaInstitucao">
+                                    <div class="mb-3 text-start">
+                                        <label for="inputNovaInstitucao" class="form-label">Nome da Instituição</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-building"></i></span>
+                                            <input type="text" class="form-control" id="inputNovaInstitucao" placeholder="Ex: PUC-CAMPINAS" required/>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary w-100" type="submit">Salvar Instituição</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEMBRETE -->
+                <div id="lembrete" class="mb-3 alert alert-light border shadow-sm">
+                    <h4 class="fs-6 mb-2"><i class="bi bi-lightbulb-fill"></i> Dica rápida</h4>
+                    <p class="fw-semibold text-danger mb-0">Para excluir uma instituição, é necessário excluir todas as turmas e disciplinas associadas.</p>
+                </div>
+
+                <!-- LISTA DE INSTITUIÇÕES -->
+                <div class="container mt-4">
+                    <div id="listaInstituicoes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center"></div>
+                </div> 
+
+                <!-- TEMPLATE -->
+                <template id="templateInstituicao">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h5 class="card-title fw-semibold nome-instituicao"></h5>
+                                <div class="d-flex justify-content-center gap-2 mt-3">
+                                    <button type="button" class="btn btn-outline-warning btn-sm m-1" aria-label="Editar instituição">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm btn-excluir m-1" aria-label="Excluir instituição">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- MODAL EDITAR INSTITUIÇÃO -->
+                <div class="modal fade" id="modalEditarInstituicao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditarInstituicaoLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalEditarInstituicaoLabel">Editar Instituição</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="formEditarInstituicao">
+                                    <div class="mb-3 text-start">
+                                        <label for="inputInstituicaoEditar" class="form-label">Digite o novo nome da instituição</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-book"></i></span>
+                                            <input type="text" class="form-control" id="inputInstituicaoEditar" placeholder="Ex: PUC-CAMPINAS" required/>
+                                        </div>
+                                    </div>
+                                    <button id="btnSalvarEdicao" class="btn btn-primary w-100" type="submit">Salvar Alterações</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer id="footer" class="container-fluid px-lg-5 text-center py-2 mt-auto bg-light border-top">
+            <small>NotaDez - 2025 — Criado para facilitar a vida dos docentes</small>
+        </footer>
+
+        <!-- SCRIPTS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/scripts/instituicoes.js"></script>
+    </body>
+</html>

@@ -1,0 +1,203 @@
+<!-- Autora: Laura Lugli -->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cursos | NotaDez</title>
+
+        <link href="/styles/base.css" rel="stylesheet"/>
+        <link href="/styles/cursos.css" rel="stylesheet"/>
+
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+
+    <body class="d-flex flex-column min-vh-100 bg-body-tertiary">
+        <!-- NAVBAR -->
+        <nav class="navbar bg-body-tertiary fixed-top shadow-sm">
+            <div class="container-fluid px-lg-5">
+                <a class="navbar-brand fw-semibold" href="#">
+                    <i class="bi bi-mortarboard-fill"></i> NotaDez
+                </a>
+
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="offcanvas" 
+                    data-bs-target="#offcanvasNavbar" 
+                    aria-controls="offcanvasNavbar" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title fw-semibold" id="offcanvasNavbarLabel">Menu NotaDez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item"><a class="nav-link" href="../pages/home.html"><i class="bi bi-house"></i> Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/instituicoes.html">Instituição</a></li>
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="../pages/cursos.html">Cursos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/disciplinas.html">Disciplina</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/turmas.html">Turmas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/notas.html">Notas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN -->
+        <main class="flex-grow-1 mt-5 mb-5 d-flex align-items-start justify-content-center">
+            <div class="container-fluid bg-white shadow rounded p-5">
+                <h1 class="fw-bold mb-3 display-6">
+                    <i class="bi bi-journals"></i> Cursos
+                </h1>
+
+                <p class="text-muted mb-4">Registre e gerencie cursos.</p>
+
+                <!-- Alertas (JS) -->
+                <div class="alert alert-warning d-flex align-items-center d-none" id="alertDuplicada" role="alert" aria-live="polite">
+                    <div><i class="bi bi-exclamation-triangle"></i><strong> Curso já cadastrado!</strong></div>
+                </div>
+
+                <div class="alert alert-warning d-flex align-items-center d-none" id="alertCampos" role="alert" aria-live="polite">
+                    <div><i class="bi bi-exclamation-triangle"></i><strong> Campos obrigatórios não preenchidos!</strong></div>
+                </div>
+
+                <div class="alert alert-success d-flex align-items-center d-none" id="alertSucesso" role="alert" aria-live="polite">
+                    <div><i class="bi bi-check-circle"></i><strong> Curso cadastrado com sucesso!</strong></div>
+                </div>
+
+                <div class="d-grid gap-2 col-sm-6 col-md-4 mx-auto mb-5">
+                    <button 
+                        type="button" 
+                        class="btn btn-primary fw-semibold" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#modalNovoCurso">
+                        <i class="bi bi-plus-circle"></i> Novo Curso
+                    </button>
+                </div>
+
+                <!-- Modal Novo Curso -->
+                <div class="modal fade" id="modalNovoCurso" tabindex="-1" aria-labelledby="modalNovoCursoLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content shadow">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalNovoCursoLabel">Novo Curso</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p class="text-start">Preencha o campo abaixo para adicionar um novo curso.</p>
+
+                                <form id="formNovoCurso">
+                                    <div class="mb-3 text-start">
+                                        <label for="selectCurso" class="form-label">Selecione a instituição correspondente</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-building"></i></span>
+                                            <select class="form-select" id="selectCurso" required>
+                                                <option value="" selected disabled>Instituições cadastradas</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 text-start">
+                                        <label for="inputNovoCurso" class="form-label">Nome do curso</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-journals"></i></span>
+                                            <input type="text" class="form-control" id="inputNovoCurso" placeholder="Ex: Engenharia de Software" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button id="btnSalvar" class="btn btn-primary w-100" type="submit">Salvar Curso</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de cursos -->
+                <div class="container mt-4" style="max-width: 1000px;">
+                    <div id="listacurso" class="d-flex flex-column gap-4">
+                    </div>
+                </div>
+
+                <!-- Templates -->
+                <template id="templateInstituicao">
+                    <div class="instituicao-container">
+                        <h2 class="fw-bold mb-3 nome-instituicao text-center text-md-start"></h2>
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center cursos-container">
+                        </div>
+                    </div>
+                </template>
+
+                <template id="templateCurso">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h6 class="card-title fw-semibold nome-curso"></h6>
+                                <div class="d-flex justify-content-center justify-content-md-start gap-2 mt-3">
+                                    <button type="button" class="btn btn-outline-warning btn-sm m-1" aria-label="Editar curso">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                   <button type="button" class="btn btn-outline-danger btn-sm btn-excluir m-1" aria-label="Excluir curso">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Modal Editar Curso -->
+                <div class="modal fade" id="modalEditarCursos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditarCursosLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalEditarCursosLabel">Editar curso</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="formEditarCurso">
+                                    <div class="mb-3 text-start">
+                                        <label for="inputCursoEditar" class="form-label">Digite o novo nome do curso</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-book"></i></span>
+                                            <input type="text" class="form-control" id="inputCursoEditar" placeholder="Ex: Engenharia de Software" required/>
+                                        </div>
+                                    </div>
+                                    <button id="btnSalvarEdicao" class="btn btn-primary w-100" type="submit">Salvar Alterações</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer id="footer" class="container-fluid px-lg-5 text-center py-2 mt-auto bg-light border-top">
+            <small>NotaDez - 2025 — Criado para facilitar a vida dos docentes</small>
+        </footer>
+
+        <!-- Dependências JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/scripts/cursos.js"></script>
+    </body>
+</html>

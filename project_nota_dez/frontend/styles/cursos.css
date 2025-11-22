@@ -1,0 +1,235 @@
+/* AUTORA: Rafaela Jacobsen */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ======== BASE ======== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f8ff; /* Fundo muito claro e suave */
+  color: #1e3c72; /* Cor de texto principal (Azul Escuro) */
+}
+
+/* ======== NAVBAR ======== */
+.navbar {
+  /* Aplica o gradiente de azul na barra de navegação */
+  background: linear-gradient(135deg, #1e88e5, #1565c0) !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar-brand i {
+  margin-right: 6px;
+}
+
+/* Inverte as cores do ícone de sanduíche para que fique branco no fundo azul */
+.navbar-toggler {
+  border: none;
+  filter: brightness(0) invert(1);
+}
+
+/* Estilo do menu lateral (Offcanvas) */
+.offcanvas {
+  background-color: #f5f8ff;
+  border-left: 2px solid #1565c0;
+}
+
+.offcanvas-title {
+  color: #1e3c72;
+}
+
+.nav-link {
+  color: #1e3c72 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1565c0 !important;
+}
+
+/* Estilo para o link ativo (página atual) */
+.nav-link.active {
+  color: #1565c0 !important;
+  font-weight: 600;
+}
+
+/* ======== BLOCO DE APRESENTAÇÃO / MAIN CONTENT ======== */
+/* O bloco de conteúdo principal está com as classes 'container-fluid bg-white shadow rounded p-5' */
+.container-fluid.bg-white {
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(30, 60, 114, 0.15);
+  max-width: 1000px;
+  width: 90%; 
+  margin-top: 80px;
+}
+
+h1 {
+  color: #1e3c72;
+}
+
+p.lead {
+  color: #607d8b;
+}
+
+/* ======== CARDS (para os cursos) ======== */
+.card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(30, 60, 114, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(30, 60, 114, 0.25);
+}
+
+.card-title {
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #607d8b;
+}
+
+/* Botões com Gradiente */
+.btn-primary {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(21, 101, 192, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(21, 101, 192, 0.55);
+}
+
+/* Botões de Contorno */
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+
+/* ALERTS */
+.alert {
+  border-radius: 10px;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: left; 
+}
+
+.alert-warning {
+  background-color: #fff8e1;
+  color: #f57f17;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* MODAL */
+.modal-content {
+  background-color: #ffffff; 
+  color: #1e3c72; 
+  border-radius: 12px;
+  border: 1px solid #bbdefb;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.modal-header {
+  border-bottom: 1px solid #bbdefb;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-body p {
+  color: #607d8b;
+}
+
+/* Formulário na Modal */
+.input-group-text {
+  background-color: #f2f6fc;
+  border: 1px solid #bbdefb;
+  color: #1565c0;
+}
+
+.form-control, .form-select {
+  color: #1e3c72;
+  border: 1px solid #bbdefb;
+  border-radius: 8px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #1565c0;
+    box-shadow: 0 0 10px rgba(21, 101, 192, 0.25);
+}
+
+/* Estilo para o agrupamento de instituições */
+.instituicao-container {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e3f2fd;
+}
+
+.instituicao-container:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+h2.nome-instituicao {
+    font-size: 1.5rem;
+    color: #1565c0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #bbdefb;
+    display: inline-block;
+}
+
+/* ======== RODAPÉ ======== */
+#footer {
+  background-color: #e3f2fd;
+  color: #1e3c72;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  border-top: 1px solid #bbdefb; /* Linha sutil de separação */
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  h1.display-5 {
+    font-size: 1.8rem;
+  }
+}

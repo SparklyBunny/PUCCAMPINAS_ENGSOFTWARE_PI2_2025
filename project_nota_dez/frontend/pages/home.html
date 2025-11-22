@@ -1,0 +1,142 @@
+<!-- Autora: Laura Lugli -->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | NotaDez</title>
+
+        <link href="/styles/base.css" rel="stylesheet"/>
+        <link href="/styles/home.css" rel="stylesheet"/>
+
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+
+    <body class="d-flex flex-column min-vh-100 bg-body-tertiary">
+
+        <!-- NAVBAR -->
+        <nav class="navbar bg-body-tertiary fixed-top shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-semibold" href="#">
+                    <i class="bi bi-mortarboard-fill"></i> NotaDez
+                </a>
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="offcanvas" 
+                    data-bs-target="#offcanvasNavbar" 
+                    aria-controls="offcanvasNavbar" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title fw-semibold" id="offcanvasNavbarLabel">Menu NotaDez</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="../pages/home.html"><i class="bi bi-house"></i> Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/instituicoes.html">Instituição</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/cursos.html">Cursos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/disciplinas.html">Disciplina</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/turmas.html">Turmas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../pages/notas.html">Notas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN -->
+        <main class="flex-grow-1 text-center mt-5">
+
+            <!-- Apresentação -->
+            <div class="container-fluid bg-white shadow rounded p-5 my-5 mx-auto">
+                <h1 class="fw-bold mb-3 display-5">Seja bem-vindo(a) ao NotaDez!</h1>
+                <p class="lead text-muted">
+                    O <strong>NotaDez</strong> é uma ferramenta desenvolvida para docentes do ensino superior 
+                    gerenciarem suas disciplinas, turmas e notas com autonomia, precisão e segurança. 
+                    Cadastre instituições, importe alunos, lance notas e calcule médias finais automaticamente.
+                </p>
+            </div>
+
+            <!-- Cards de funcionalidades -->
+            <div class="container-fluid bg-white shadow rounded p-5 mt-5 mx-auto">
+                <div class="row justify-content-center g-4">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-semibold">Gerenciamento de Instituição</h5>
+                                <p class="card-text">Cadastre, edite e exclua instituições.</p>
+                                <a href="../pages/instituicoes.html" class="btn btn-primary"><i class="bi bi-building"></i> Instituição</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-semibold">Gerenciamento de Cursos</h5>
+                                <p class="card-text">Registre e gerencie cursos.</p>
+                                <a href="../pages/cursos.html" class="btn btn-primary"><i class="bi bi-journals"></i> Cursos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-semibold">Gerenciamento de Disciplina</h5>
+                                <p class="card-text">Cadastre e gerencie disciplinas.</p>
+                                <a href="../pages/disciplinas.html" class="btn btn-primary"><i class="bi bi-book"></i> Disciplina</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-semibold">Gerenciamento de Turmas</h5>
+                                <p class="card-text">Crie e organize turmas, além de gerenciar alunos associados.</p>
+                                <a href="../pages/turmas.html" class="btn btn-primary"><i class="bi bi-pencil"></i> Turmas</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-semibold">Gerenciamento de Notas</h5>
+                                <p class="card-text">Lance, calcule e acompanhe as notas dos alunos.</p>
+                                <a href="../pages/notas.html" class="btn btn-primary"><i class="bi bi-calculator"></i> Notas</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer id="footer" class="container-fluid text-center py-2 mt-auto bg-light border-top">
+            <small>NotaDez - 2025 — Criado para facilitar a vida dos docentes</small>
+        </footer>
+
+        <!-- JS Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

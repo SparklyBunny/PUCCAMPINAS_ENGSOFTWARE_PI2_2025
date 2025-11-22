@@ -1,0 +1,240 @@
+<!--Autora: Laura Lugli-->
+<!--Define que a página usa HTML5 e está em português. -->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <!-- Define o idioma principal da página. -->
+        <meta charset="utf-8"/>
+
+        <!-- Garante que a página seja responsiva. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Título da aba do navegador. -->
+        <title>Login | NotaDez</title>
+
+        <!-- Importa o CSS base. -->
+        <link href="/styles/base.css" rel="stylesheet"/>
+
+        <!-- Importa o CSS específico dessa tela de login. -->
+        <link href="/styles/login.css" rel="stylesheet"/>
+
+        <!-- Importa o Bootstrap (para estilização). -->
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous"
+        />
+
+        <!-- Importa os ícones do Bootstrap (usados nos campos e alertas). -->
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+
+    <!-- BODY -->
+    <body class="d-flex flex-column min-vh-100 bg-body-tertiary">
+
+        <!-- MAIN -->
+        <main class="flex-grow-1 d-flex justify-content-center align-items-start pt-5">
+        
+
+            <!-- Card do formulário de login (principal). -->
+            <div class="shadow p-4 mb-5 bg-body rounded" >
+                    
+                <!-- Container interno para o conteúdo do login. Centraliza todo o texto dentro deste bloco. -->
+                <div id="login" class="text-center">
+                
+                    <!-- 
+                        Título principal da página de login.
+                        - Ícone "mortarboard-fill" (chapéu de formatura).
+                    -->
+                    <h1>
+                        <i class="bi bi-mortarboard-fill"></i> NotaDez
+                    </h1>
+
+                    <!-- Subtítulo e instruções. -->
+                    <h2 class="h5 mb-3">Acesso Docente</h2>
+
+                    <!-- Texto explicativo abaixo do subtítulo. -->
+                    <p class="subtitulo">Faça login para continuar. Não há acesso como visitante.</p>
+
+                    <!-- 
+                        ÁREA DE ALERTAS 
+                        - "d-none": ocultos por padrão, só aparecem via JS.
+                    -->
+
+                    <!--  Alerta vermelho (danger) para erro de login. -->
+                    <div class="alert alert-danger d-flex align-items-center d-none" role="alert">
+                        <div><i class="bi bi-x-circle"></i><strong> E-mail ou senha incorretos!</strong> Tente novamente.</div>
+                    </div>
+
+                    <!-- Alerta amarelo (warning) para conta inexistente. -->
+                    <div class="alert alert-warning d-flex align-items-center d-none" role="alert">
+                        <div><i class="bi bi-exclamation-triangle"></i><strong> Conta não encontrada!</strong> Verifique se você digitou corretamente.</div>
+                    </div>
+
+                    <!-- Alerta amarelo (warning) para campos obrigatórios não preenchidos. -->
+                    <div class="alert alert-warning d-flex align-items-center d-none" role="alert">
+                        <div><i class="bi bi-exclamation-triangle"></i><strong> Preencha todos os campos!</strong></div>
+                    </div>
+
+                    <!-- Formulário de login. -->
+                    <form class="my-4" id="formLogin">
+
+                        <!-- Bloco para o campo de e-mail.-->
+                        <div class="mb-3 text-start">
+
+                            <!-- Label associada ao campo de e-mail (via atributo "for"). -->
+                            <label for="inputEmailLogin" class="form-label">E-mail</label>
+                            
+                            <!-- Agrupa ícone e campo de texto em uma única linha. -->
+                            <div class="input-group">
+
+                                <!-- Ícone de envelope para indicar campo de e-mail. -->
+                                <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+
+                                <!-- Campo de entrada:
+                                    - type="email": valida formato de e-mail.
+                                -->
+                                <input type="email" class="form-control" id="inputEmailLogin" placeholder="exemplo@email.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Bloco para o campo de senha (mesma lógica do campo e-mail).  -->
+                        <div class="mb-3 text-start">
+                            <!-- Label associada ao campo de senha (via atributo "for"). -->
+                            <label for="inputPasswordLogin" class="form-label">Senha</label>
+
+                            <!-- Agrupa ícone e campo de senha em uma única linha. -->
+                            <div class="input-group">
+                                <!-- Ícone de chave para indicar campo de senha. -->
+                                <span class="input-group-text"><i class="bi bi-key"></i></span>
+                                <!-- 
+                                    Campo de entrada:
+                                    - type="password": oculta caracteres digitados.
+                                -->
+                                <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Digite sua senha" required>
+                            </div>
+                        </div>
+
+                        <!-- Centraliza e expande o botão. -->
+                        <div class="d-grid gap-2">
+                            
+                            <!-- Botão de envio do formulário. -->
+                            <input type="submit" class="btn btn-primary" id="btnEntrar" value="Entrar">
+                        </div>
+                    </form>
+                    <!-- Fim do formulário de login. -->
+
+                    <!-- Links adicionais abaixo do formulário. -->
+                    <div id="acoesLogin">
+
+                        <!-- Link para recuperação de senha. -->
+                        <a href="#" class="esqueciSenha" data-bs-toggle="modal" data-bs-target="#modalEsqueciSenha">Esqueci minha senha</a><br/>
+
+                        <!-- Link para página de cadastro de nova conta. -->
+                        <a href="/pages/cadastro.html" class="criarConta">Não tem conta? Crie uma agora</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Fim do card de login. -->
+
+        <!-- Modal de recuperação de senha. -->
+        <div class="modal fade" id="modalEsqueciSenha" tabindex="-1" aria-labelledby="modalEsqueciSenhaLabel" aria-hidden="true">
+
+            <!-- Centraliza verticalmente o modal na tela. -->
+            <div class="modal-dialog modal-dialog-centered">
+
+                <!-- Container principal do conteúdo do modal. -->
+                <div class="modal-content">
+
+                    <!-- Cabeçalho do modal. -->
+                    <div class="modal-header">
+
+                        <!-- Título do modal. -->
+                        <h1 class="modal-title fs-5" id="modalEsqueciSenhaLabel">Recuperar Senha</h1>
+
+                        <!-- Botão para fechar o modal. -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+
+                    <!-- Corpo do modal. -->
+                    <div class="modal-body">
+                        <p>Digite o e-mail cadastrado para receber o link de recuperação de senha.</p>
+
+                        <!-- Formulário de recuperação. -->
+                        <form id="formEsqueciSenha">
+                            <div class="mb-3 text-start">
+                                <label for="inputEmailRecuperacao" class="form-label">E-mail</label>
+                                <div class="input-group">
+
+                                    <!-- Ícone de envelope. -->
+                                    <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+
+                                    <!-- Campo obrigatório para digitar o e-mail. -->
+                                    <input type="email" class="form-control" id="inputEmailRecuperacao" placeholder="exemplo@email.com" required>
+                                </div>
+                            </div>
+
+                            <!-- Rodapé do modal com botão de ação. -->
+                            <div class="modal-footer" id="botaoLink">
+
+                                <!-- Botão ocupa toda a largura. -->
+                                <button class="btn btn-primary w-100" type="submit">Enviar Link</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal de confirmação de envio. -->
+        <div class="modal fade" id="modalConfirmacaoEnvio" tabindex="-1" aria-labelledby="modalConfirmacaoEnvioLabel" aria-hidden="true">
+
+            <!-- Centraliza verticalmente o modal na tela. -->
+            <div class="modal-dialog modal-dialog-centered">
+
+                <!-- Container principal do conteúdo do modal. -->
+                <div class="modal-content">
+
+                    <!-- Cabeçalho do modal. -->
+                    <div class="modal-header">
+
+                        <!-- Título do modal. Ícone de confirmação. -->
+                        <h1 class="modal-title fs-5" id="modalConfirmacaoEnvioLabel"> <i class="bi bi-send-check"></i> E-mail Enviado!</h1>
+
+                        <!-- Botão para fechar o modal. -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+
+                    <!-- Corpo do modal. -->
+                    <div class="modal-body">
+
+                        <!-- Alerta verde de sucesso. -->
+                        <div class="alert alert-success mb-0" role="alert">
+                            Um link de recuperação foi enviado para o e-mail cadastrado.<br>
+                            Verifique sua caixa de entrada (ou pasta de spam).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé da página. -->
+        <footer id="footer" class="container-fluid text-center py-2 mt-auto bg-light border-top">
+            <small>NotaDez - 2025 — Criado para facilitar a vida dos docentes</small>
+        </footer>
+
+        <!-- 
+            Importa o JavaScript do Bootstrap.
+            - "bootstrap.bundle.min.js": inclui tanto o Bootstrap JS quanto o Popper.js (necessário para tooltips, dropdowns, offcanvas, modais etc.).
+            - O uso via CDN garante que o navegador baixe a biblioteca diretamente da rede de distribuição de conteúdo (rápido e confiável).
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/scripts/notas.js"></script>
+        <script src="/scripts/login.js"></script>
+    </body>
+</html>

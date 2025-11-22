@@ -1,0 +1,102 @@
+<!-- Autora: Laura Lugli -->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro Inicial | NotaDez</title>
+
+        <link href="/styles/base.css" rel="stylesheet"/>
+        <link href="/styles/cadastro_inicial.css" rel="stylesheet"/>
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+
+    <body class="d-flex flex-column min-vh-100 bg-body-tertiary">
+        <!-- MAIN -->
+        <main class="flex-grow-1 d-flex justify-content-center align-items-start pt-5">
+            <div class="shadow p-4 mb-5 bg-body rounded" style="max-width: 450px; width: 100%;">
+                <div id="cadastroInicial" class="text-center">
+                    <h1>
+                        <i class="bi bi-mortarboard-fill"></i> NotaDez
+                    </h1>
+
+                    <h2 class="h5 mb-3">Cadastro Inicial</h2>
+                    <p class="subtitulo">Informe sua primeira instituição e curso.</p>
+
+                    <!-- Alertas (JS) -->
+                    <div class="alert alert-danger d-flex align-items-center d-none" role="alert">
+                        <div><i class="bi bi-x-circle"></i><strong> Ocorreu um erro ao salvar as informações!</strong> Tente novamente.</div>
+                    </div>
+
+                    <div class="alert alert-warning d-flex align-items-center d-none" role="alert">
+                        <div><i class="bi bi-exclamation-triangle"></i><strong> Preencha todos os campos antes de continuar!</strong></div>
+                    </div>
+
+                    <div class="alert alert-warning d-flex align-items-center d-none" role="alert">
+                        <div><i class="bi bi-exclamation-triangle"></i><strong> Verifique os dados informados!</strong> Use apenas letras e espaços.</div>
+                    </div>
+
+                    <div class="alert alert-success d-flex align-items-center mb-3" role="alert">
+                        <div><strong>Seja bem-vindo(a), [nome]!</strong></div>
+                    </div>
+
+                    <div id="dica" class="card shadow-sm mb-4 text-start border-0">
+                        <div class="card-body rounded">
+                            <h3 class="fs-6 mb-2">
+                                <i class="bi bi-lightbulb-fill"></i> Dica rápida
+                            </h3>
+                            <p class="mb-1">Você pode adicionar outras instituições e cursos depois.</p>
+                            <p class="fw-semibold mb-0">
+                                <i class="bi bi-exclamation-circle"></i> Obrigatório informar pelo menos uma instituição e um curso.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form class="my-4 text-start" id="formCadastroInicial">
+                        <div class="mb-3">
+                            <label for="inputNomeLugar" class="form-label">Nome da Instituição</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-building"></i></span>
+                                <input type="text" class="form-control" id="inputNomeLugar" placeholder="Ex: PUC-Campinas" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="inputCurso" class="form-label">Nome do Curso</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-book"></i></span>
+                                <input type="text" class="form-control" id="inputCurso" placeholder="Ex: Engenharia de Software" required>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <input type="submit" class="btn btn-primary" id="btnSalvarContinuar" value="Salvar e Continuar">
+                        </div>
+                    </form>
+
+                    <p class="text-muted mb-0">
+                        Após salvar, você será redirecionado automaticamente para o sistema.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer id="footer" class="container-fluid text-center py-2 mt-auto bg-light border-top">
+            <small>NotaDez - 2025 — Criado para facilitar a vida dos docentes</small>
+        </footer>
+
+        <!-- Dependências JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/scripts/cadastro-inicial.js"></script>
+    </body>
+</html>
