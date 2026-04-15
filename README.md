@@ -166,6 +166,6 @@ Depois de Instalar e Configurar o sistema, é preciso iniciá-lo. Dentro da past
 npm run dev
 ```
 E acesse o site indicado como resultado.
-A mior parte dos erros, principalmente de BD, terão seus logs registrados na mesma janela do CMD ou Terminal.
+A maior parte dos erros, principalmente de BD, terão seus logs registrados na mesma janela do CMD ou Terminal.
 
-Para finalizar o processo e fechar o servido, aperte dentro do CMD/Terminal `ctrl + D`.
+Para finalizar o processo e fechar o servidor, aperte dentro do CMD/Terminal `ctrl + D`.
